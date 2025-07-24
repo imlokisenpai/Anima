@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin — Anima Quaerens</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <h1>Admin Panel</h1>
+  <p><a href="/">← Back to main site</a></p>
+
+  <div class="posts">
+    <% posts.forEach(post => { %>
+      <div class="post">
+        <p><%= post.message %></p>
+        <form action="/delete" method="POST">
+          <input type="hidden" name="id" value="<%= post.id %>" />
+          <input type="hidden" name="password" value="<%= password %>" />
+          <button type="submit">Delete</button>
+        </form>
+      </div>
+    <% }) %>
+  </div>
+</body>
+</html>
