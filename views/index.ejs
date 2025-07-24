@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Anima Quaerens</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <h1>Anima Quaerens</h1>
+  <form action="/submit" method="POST">
+    <textarea name="message" placeholder="Speak your truth..." required></textarea>
+    <button type="submit">Whisper to the Void</button>
+  </form>
+
+  <div class="posts">
+    <% posts.forEach(post => { %>
+      <div class="post">
+        <p><%= post.message %></p>
+      </div>
+    <% }) %>
+  </div>
+</body>
+</html>
